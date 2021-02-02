@@ -1,8 +1,8 @@
 {
-  "name": "chapa_tu_taxi",
+  "name": "moto_lineal",
   "version": "0.0.1",
   "description": "A Quasar Framework app",
-  "productName": "Chapa tu mototaxi",
+  "productName": "Moto Lineal",
   "author": "Miguel Rodriguez <miguekos1233@gmail.com>",
   "private": true,
   "scripts": {

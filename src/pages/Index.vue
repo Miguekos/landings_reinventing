@@ -4,12 +4,13 @@
       <div class="col-md-3"></div>
       <div class="col-xs-12 col-md-6">
         <div class="text-center">
-          <q-img src="logo.png"></q-img>
+          <q-img src="logo_moto_lineal.png"></q-img>
         </div>
         <q-list>
           <q-form @submit="onSubmit">
             <q-item class="text-justify">
               <q-item-section>
+                ¡Tu nueva moto te espera!
                 Aprovecha esta oportunidad, ten tu mototaxi propia y empieza a
                 emprender 🛺 😎 Registra tus datos de contacto aquí para que
                 nuestros asesores puedan pre evaluarte Pre evaluación 100%
@@ -183,8 +184,8 @@
                 />
               </q-item-section>
             </q-item>
-            <q-separator spaced inset />
-                        <q-item class="text-center">
+            <!-- <q-separator spaced inset /> -->
+            <!-- <q-item class="text-center">
               <q-item-section class="text-left q-pl-md">
                 ¿Cuánta experiencia tienes como mototaxista? *
                 <q-option-group
@@ -200,7 +201,7 @@
                   ]"
                 />
               </q-item-section>
-            </q-item>
+            </q-item> -->
             <q-separator spaced inset />
             <q-item class="text-center">
               <q-item-section class="text-left q-pl-md">
@@ -398,7 +399,11 @@ export default {
       numero_documento: "",
       fecha_nacimiento: "",
       celular: "",
-      brevete: ""
+      brevete: "",
+      co_plaveh: "",
+      co_modveh: "",
+      ti_vehper: "",
+      ti_combus: "",
     };
   },
   computed: {
@@ -439,23 +444,23 @@ export default {
             // ciudad: this.ciudad,
             // brevete: this.brevete,
             // lo que recibe el webservice
-            ti_landin: 1,
-            no_apepat: this.apellido_paterno,
-            no_apemat: this.apellido_materno,
-            no_nombre: this.nombres,
-            co_docide: this.numero_documento,
-            ti_docide: this.tipo_documento,
+            ti_landin: 2,
+            no_apepat: this.apellido_paterno ? this.apellido_paterno : "",
+            no_apemat: this.apellido_materno ? this.apellido_materno : "",
+            no_nombre: this.nombres ? this.nombres : "",
+            co_docide: this.numero_documento ? this.numero_documento : "",
+            ti_docide: this.tipo_documento ? this.tipo_documento : "",
             ti_nacion: "",
             fe_nacimi: this.fecha_nacimiento,
             no_correo: "",
-            nu_telefo: this.celular,
-            va_experi: this.experiencia,
-            ti_liccon: this.brevete,
-            co_ubigeo: this.distrito,
-            co_plaveh: "",
-            co_modveh: "",
-            ti_vehper: "",
-            ti_combus: "",
+            nu_telefo: this.celular ? this.celular : "",
+            va_experi: this.experiencia ? this.experiencia : "",
+            ti_liccon: this.brevete ? this.brevete : "",
+            co_ubigeo: this.distrito ? this.distrito : "",
+            co_plaveh: this.co_plaveh ? this.co_plaveh : "",
+            co_modveh: this.co_modveh ? this.co_modveh : "",
+            ti_vehper: this.ti_vehper ? this.ti_vehper : "",
+            ti_combus: this.ti_combus ? this.ti_combus : "",
             co_estciv: this.estado_civil
           };
           console.log(JsonEnviar);
@@ -463,13 +468,17 @@ export default {
             `https://api.reinventing.com.pe/v2.0/comerc/insert_landin`,
             JsonEnviar
           );
+          // const respon = await this.$axios.post(
+          //   `http://127.0.0.1:5001/api/v1.0/comerc/insert_landin`,
+          //   JsonEnviar
+          // );
           console.log("respon.data", respon.data);
           this.$q.notify({
             position: "top-right",
             message: "Registro Correcto",
             color: "green"
           });
-          // this.loadboton = false;
+          this.loadboton = false;
           setTimeout(() => {
             window.location.reload();
           }, 2000);
