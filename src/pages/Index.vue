@@ -10,12 +10,14 @@
           <q-form @submit="onSubmit">
             <q-item class="text-justify">
               <q-item-section>
-                ¡Tu nueva moto te espera!
-                Aprovecha esta oportunidad, ten tu mototaxi propia y empieza a
-                emprender 🛺 😎 Registra tus datos de contacto aquí para que
-                nuestros asesores puedan pre evaluarte Pre evaluación 100%
-                digital 👩🏽‍💻 Si tienes alguna duda, escríbenos por inbox en
-                nuestra página en Facebook. Encuéntranos como REINVENTING.
+                <div class="text-h5">¡Tu nueva moto te espera!</div>
+                <br>
+                Deja de alquilar y ten tu moto lineal 🏍  🛵 😎
+                Registra tus datos de contacto aquí para que nuestros asesores puedan pre evaluarte
+                Pre evaluación 100% digital 👩🏽‍💻
+                <br>
+                <br>
+                ✅  Si tienes alguna duda, escríbenos por inbox en nuestra página en Facebook. Encuéntranos como REINVENTING.
               </q-item-section>
             </q-item>
             <q-item class="text-center">
