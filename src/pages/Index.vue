@@ -4,20 +4,20 @@
       <div class="col-md-3"></div>
       <div class="col-xs-12 col-md-6">
         <div class="text-center">
-          <q-img src="logo_moto_lineal.png"></q-img>
+          <q-img src="logo_taxipropio.png"></q-img>
         </div>
         <q-list>
           <q-form @submit="onSubmit">
             <q-item class="text-justify">
               <q-item-section>
-                <div class="text-h5">¡Tu nueva moto te espera!</div>
+                <div class="text-h5">¡TU TAXI PROPIO AL CRÉDITO!</div>
                 <br>
-                Deja de alquilar y ten tu moto lineal 🏍  🛵 😎
-                Registra tus datos de contacto aquí para que nuestros asesores puedan pre evaluarte
-                Pre evaluación 100% digital 👩🏽‍💻
+                Estás a un paso de obtener TU TAXI PROPIO nuevo, listo para trabajar.
+                Tenemos disponible la marca Chery modelo Arizzo, desde 699 dólares de inicial.
                 <br>
                 <br>
-                ✅  Si tienes alguna duda, escríbenos por inbox en nuestra página en Facebook. Encuéntranos como REINVENTING.
+                ¿Qué esperas? Aprovecha que tenemos pocas unidades disponibles.
+                Déjanos tus datos para pre evaluarte y ponernos en contacto contigo ;)
               </q-item-section>
             </q-item>
             <q-item class="text-center">
@@ -64,6 +64,22 @@
                   v-model="nombres"
                   ref="nombres"
                   label="Nombres"
+                ></q-input>
+              </q-item-section>
+            </q-item>
+            <q-item class="text-center">
+              <q-item-section>
+                <q-input
+                  outlined
+                  lazy-rules
+                  :rules="[
+                    val => (val && val.length > 0) || 'Campo obligatorio'
+                  ]"
+                  stack-label
+                  dense
+                  v-model="correo"
+                  ref="correo"
+                  label="Correo electrónico"
                 ></q-input>
               </q-item-section>
             </q-item>
@@ -171,14 +187,14 @@
             <q-separator spaced inset />
             <q-item class="text-center">
               <q-item-section class="text-left q-pl-md">
-                ¿Estado Civil? *
+                ¿Nacionalidad? *
                 <q-option-group
                   dense
                   size="xs"
                   :options="optionsC"
                   label="Notifications"
                   type="radio"
-                  v-model="estado_civil"
+                  v-model="ti_nacion"
                   lazy-rules
                   :rules="[
                     val => (val && val.length > 0) || 'Campo obligatorio'
@@ -207,11 +223,12 @@
             <q-separator spaced inset />
             <q-item class="text-center">
               <q-item-section class="text-left q-pl-md">
-                ¿Qué tipo de brevete para moto tienes? *
+                Tipo de licencia de conducir *
+                <div>No se acepta brevete A1</div>
                 <q-option-group
                   dense
                   size="xs"
-                  :options="optionsR"
+                  :options="optionsLI"
                   label="Notifications"
                   type="radio"
                   v-model="brevete"
@@ -321,7 +338,22 @@ export default {
   data() {
     return {
       estado_civil : "",
+      ti_nacion: "",
       tipo_documento: null,
+      optionsLI: [
+        {
+          label: "A2",
+          value: 0
+        },
+        {
+          label: "A3",
+          value: 1
+        },
+        {
+          label: "Otro",
+          value: 3
+        },
+      ],
       options_tipo_documento: [
         {
           name: "DNI",
@@ -337,6 +369,10 @@ export default {
         }
       ],
       group: null,
+      optionsN: [
+        { label: "Venezolana", value: "VE" },
+        { label: "Peruana", value: "PE", color: "green" }
+      ],
       optionsC: [
         { label: "Soltero", value: "S" },
         { label: "Casado", value: "C", color: "green" },
@@ -397,6 +433,7 @@ export default {
       model: "",
       apellido_paterno: "",
       apellido_materno: "",
+      correo: "",
       nombres: "",
       numero_documento: "",
       fecha_nacimiento: "",
@@ -446,15 +483,15 @@ export default {
             // ciudad: this.ciudad,
             // brevete: this.brevete,
             // lo que recibe el webservice
-            ti_landin: 2,
+            ti_landin: 3,
             no_apepat: this.apellido_paterno ? this.apellido_paterno : "",
             no_apemat: this.apellido_materno ? this.apellido_materno : "",
             no_nombre: this.nombres ? this.nombres : "",
             co_docide: this.numero_documento ? this.numero_documento : "",
             ti_docide: this.tipo_documento ? this.tipo_documento : "",
-            ti_nacion: "",
+            ti_nacion: this.ti_nacion ? this.ti_nacion : "",
             fe_nacimi: this.fecha_nacimiento,
-            no_correo: "",
+            no_correo: this.correo ? this.correo : "",
             nu_telefo: this.celular ? this.celular : "",
             va_experi: this.experiencia ? this.experiencia : "",
             ti_liccon: this.brevete ? this.brevete : "",
@@ -505,6 +542,7 @@ export default {
     paso(val) {
       if (val === 3) {
         this.$refs.nombres.validate();
+        this.$refs.correo.validate();
         this.$refs.apellidos.validate();
         this.$refs.tipodocumento.validate();
         this.$refs.documentIdentidad.validate();
@@ -519,6 +557,7 @@ export default {
         this.$refs.enterarte.validate();
         if (
           this.$refs.nombres.hasError ||
+          this.$refs.correo.hasError ||
           this.$refs.apellidos.hasError ||
           this.$refs.tipodocumento.hasError ||
           this.$refs.documentIdentidad.hasError ||
