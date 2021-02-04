@@ -494,7 +494,7 @@ export default {
             no_correo: this.correo ? this.correo : "",
             nu_telefo: this.celular ? this.celular : "",
             va_experi: this.experiencia ? this.experiencia : "",
-            ti_liccon: this.brevete ? this.brevete : "",
+            ti_liccon: this.ti_liccon ? this.ti_liccon : "",
             co_ubigeo: this.distrito ? this.distrito : "",
             co_plaveh: this.co_plaveh ? this.co_plaveh : "",
             co_modveh: this.co_modveh ? this.co_modveh : "",
