@@ -191,8 +191,8 @@
                 <q-option-group
                   dense
                   size="xs"
-                  :options="optionsC"
-                  label="Notifications"
+                  :options="optionsN"
+                  label="¿Nacionalidad"
                   type="radio"
                   v-model="ti_nacion"
                   lazy-rules
