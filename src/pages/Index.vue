@@ -229,9 +229,8 @@
                   dense
                   size="xs"
                   :options="optionsLI"
-                  label="Notifications"
                   type="radio"
-                  v-model="brevete"
+                  v-model="ti_liccon"
                 />
               </q-item-section>
             </q-item>
@@ -441,6 +440,7 @@ export default {
       brevete: "",
       co_plaveh: "",
       co_modveh: "",
+      ti_liccon: "",
       ti_vehper: "",
       ti_combus: "",
     };
