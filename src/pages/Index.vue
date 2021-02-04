@@ -342,15 +342,15 @@ export default {
       optionsLI: [
         {
           label: "A2",
-          value: 0
+          value: 2
         },
         {
           label: "A3",
-          value: 1
+          value: 4
         },
         {
           label: "Otro",
-          value: 3
+          value: 10
         },
       ],
       options_tipo_documento: [
