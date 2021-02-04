@@ -1,8 +1,8 @@
 {
-  "name": "taxi_propio",
+  "name": "efectivo_al_toque",
   "version": "0.0.1",
   "description": "A Quasar Framework app",
-  "productName": "Taxi propio",
+  "productName": "Efectivo al toque",
   "author": "Miguel Rodriguez <miguekos1233@gmail.com>",
   "private": true,
   "scripts": {

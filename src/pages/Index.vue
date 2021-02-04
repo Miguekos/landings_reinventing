@@ -4,20 +4,23 @@
       <div class="col-md-3"></div>
       <div class="col-xs-12 col-md-6">
         <div class="text-center">
-          <q-img src="logo_taxipropio.png"></q-img>
+          <q-img src="logo_efectivo_altoque.png"></q-img>
         </div>
         <q-list>
           <q-form @submit="onSubmit">
             <q-item class="text-justify">
               <q-item-section>
-                <div class="text-h5">¡TU TAXI PROPIO AL CRÉDITO!</div>
+                <div class="text-h5">¡Préstamo efectivo al toque!</div>
                 <br>
-                Estás a un paso de obtener TU TAXI PROPIO nuevo, listo para trabajar.
-                Tenemos disponible la marca Chery modelo Arizzo, desde 699 dólares de inicial.
+               ¿Eres propietario de un vehículo o alquilas uno? 🚗
+                ✅ Entonces accede a tu préstamo efectivo de hasta s/5,500. 💰 
+                Solo deja tus datos aquí y un asesor se encargará de pre evaluarte. 
                 <br>
                 <br>
-                ¿Qué esperas? Aprovecha que tenemos pocas unidades disponibles.
-                Déjanos tus datos para pre evaluarte y ponernos en contacto contigo ;)
+                👩🏽‍💻EVALUACIÓN 100% DIGITAL 👩🏽‍💻
+                <br>
+                <br>
+                🚨No salgas de casa y recibe tu préstamo directamente en la cuenta del banco que prefieras 
               </q-item-section>
             </q-item>
             <q-item class="text-center">
@@ -67,7 +70,7 @@
                 ></q-input>
               </q-item-section>
             </q-item>
-            <q-item class="text-center">
+            <!-- <q-item class="text-center">
               <q-item-section>
                 <q-input
                   outlined
@@ -82,7 +85,7 @@
                   label="Correo electrónico"
                 ></q-input>
               </q-item-section>
-            </q-item>
+            </q-item> -->
             <q-item class="text-center">
               <q-item-section>
                 <q-select
@@ -186,15 +189,34 @@
             </q-item>
             <q-separator spaced inset />
             <q-item class="text-center">
+              <q-item-section>
+                <q-input
+                  outlined
+                  lazy-rules
+                  :rules="[
+                    val => (val && val.length === 6) || 'Campo obligatorio'
+                  ]"
+                  stack-label
+                  dense
+                  counter
+                  maxlength="6"
+                  v-model="co_plaveh"
+                  ref="co_plaveh"
+                  label="Número de placa *"
+                ></q-input>
+              </q-item-section>
+            </q-item>
+            <q-separator spaced inset />
+            <q-item class="text-center">
               <q-item-section class="text-left q-pl-md">
-                ¿Nacionalidad? *
+                Mi auto es: *
                 <q-option-group
                   dense
                   size="xs"
                   :options="optionsN"
-                  label="¿Nacionalidad"
+                  label="Mi auto es"
                   type="radio"
-                  v-model="ti_nacion"
+                  v-model="ti_vehper"
                   lazy-rules
                   :rules="[
                     val => (val && val.length > 0) || 'Campo obligatorio'
@@ -223,15 +245,14 @@
             <q-separator spaced inset />
             <q-item class="text-center">
               <q-item-section class="text-left q-pl-md">
-                Tipo de licencia de conducir *
-                <div>No se acepta brevete A1</div>
+                Mi auto usa *
                 <q-option-group
                   dense
                   size="xs"
                   :options="optionsLI"
-                  label="Notifications"
+                  label="Mi auto usa"
                   type="radio"
-                  v-model="brevete"
+                  v-model="ti_combus"
                 />
               </q-item-section>
             </q-item>
@@ -342,15 +363,15 @@ export default {
       tipo_documento: null,
       optionsLI: [
         {
-          label: "A2",
-          value: 0
-        },
-        {
-          label: "A3",
+          label: "Gasolina",
           value: 1
         },
         {
-          label: "Otro",
+          label: "GNV",
+          value: 2
+        },
+        {
+          label: "GLP",
           value: 3
         },
       ],
@@ -359,19 +380,19 @@ export default {
           name: "DNI",
           value: 1
         },
-        {
-          name: "C.E",
-          value: 2
-        },
-        {
-          name: "PTP",
-          value: 3
-        }
+        // {
+        //   name: "C.E",
+        //   value: 2
+        // },
+        // {
+        //   name: "PTP",
+        //   value: 3
+        // }
       ],
       group: null,
       optionsN: [
-        { label: "Venezolana", value: "VE" },
-        { label: "Peruana", value: "PE", color: "green" }
+        { label: "Propio", value: "P" },
+        { label: "Alquilado", value: "A", color: "green" }
       ],
       optionsC: [
         { label: "Soltero", value: "S" },
@@ -483,7 +504,7 @@ export default {
             // ciudad: this.ciudad,
             // brevete: this.brevete,
             // lo que recibe el webservice
-            ti_landin: 3,
+            ti_landin: 4,
             no_apepat: this.apellido_paterno ? this.apellido_paterno : "",
             no_apemat: this.apellido_materno ? this.apellido_materno : "",
             no_nombre: this.nombres ? this.nombres : "",
