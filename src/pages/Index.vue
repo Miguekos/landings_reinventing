@@ -202,24 +202,24 @@
                 />
               </q-item-section>
             </q-item>
-            <!-- <q-separator spaced inset /> -->
-            <!-- <q-item class="text-center">
+          <q-separator spaced inset /> 
+            <q-item class="text-center">
               <q-item-section class="text-left q-pl-md">
-                ¿Cuánta experiencia tienes como mototaxista? *
+                ¿Estado Civil? *
                 <q-option-group
                   dense
                   size="xs"
-                  :options="optionsE"
+                  :options="optionsC"
                   label="Notifications"
                   type="radio"
-                  v-model="experiencia"
+                  v-model="estado_civil"
                   lazy-rules
                   :rules="[
                     val => (val && val.length > 0) || 'Campo obligatorio'
                   ]"
                 />
               </q-item-section>
-            </q-item> -->
+            </q-item> 
             <q-separator spaced inset />
             <q-item class="text-center">
               <q-item-section class="text-left q-pl-md">
@@ -500,7 +500,7 @@ export default {
             co_modveh: this.co_modveh ? this.co_modveh : "",
             ti_vehper: this.ti_vehper ? this.ti_vehper : "",
             ti_combus: this.ti_combus ? this.ti_combus : "",
-            co_estciv: this.estado_civil
+            co_estciv: this.estado_civil ? this.estado_civil : ""
           };
           console.log(JsonEnviar);
           const respon = await this.$axios.post(
