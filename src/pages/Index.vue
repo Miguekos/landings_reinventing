@@ -558,7 +558,7 @@ export default {
             ti_docide: this.tipo_documento ? this.tipo_documento : "",
             ti_nacion: "",
             fe_nacimi: this.fecha_nacimiento,
-            no_correo: "",
+            no_correo: this.correo ? this.correo : "",
             nu_telefo: this.celular ? this.celular : "",
             va_experi: this.experiencia ? this.experiencia : "",
             ti_liccon: this.brevete ? this.brevete : "",
