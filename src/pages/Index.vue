@@ -168,6 +168,23 @@
             <q-separator spaced inset />
             <q-item class="text-center">
               <q-item-section>
+                <q-input
+                  outlined
+                  lazy-rules
+                  :rules="[
+                    val => (val && val.length > 0) || 'Campo obligatorio'
+                  ]"
+                  stack-label
+                  dense
+                  v-model="correo"
+                  ref="correo"
+                  label="Correo electrónico"
+                ></q-input>
+              </q-item-section>
+            </q-item>
+            <q-separator spaced inset />
+            <q-item class="text-center">
+              <q-item-section>
                 <q-select
                   outlined
                   dense
