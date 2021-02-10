@@ -495,7 +495,8 @@ export default {
       numero_documento: "",
       fecha_nacimiento: "",
       celular: "",
-      brevete: ""
+      brevete: "",
+      correo: ""
     };
   },
   computed: {
@@ -544,7 +545,7 @@ export default {
             ti_docide: this.tipo_documento,
             ti_nacion: "",
             fe_nacimi: this.fecha_nacimiento,
-            no_correo: "",
+            no_correo: this.correo ? this.correo : "",
             nu_telefo: this.celular,
             va_experi: this.experiencia,
             ti_liccon: this.brevete,
@@ -553,7 +554,10 @@ export default {
             co_modveh: "",
             ti_vehper: "",
             ti_combus: "",
-            co_estciv: this.estado_civil
+            co_estciv: this.estado_civil,
+            co_nivedu: this.nivel_educacion,
+            ti_perfil: this.tipo_perfil
+            
           };
           console.log(JsonEnviar);
           const respon = await this.$axios.post(
