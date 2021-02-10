@@ -167,6 +167,44 @@
             </q-item>
             <q-separator spaced inset />
             <q-item class="text-center">
+              <q-item-section>
+                <q-select
+                  outlined
+                  dense
+                  clearable
+                  v-model="nivel_educacion"
+                  :options="options_nivel_educacion"
+                  option-label="name"
+                  option-value="value"
+                  emit-value
+                  stack-label
+                  map-options
+                  label="Nivel de Educación"
+                  lazy-rules
+                  :rules="[val => (val && val > 0) || 'Campo obligatorio']"
+                />
+                
+              </q-item-section>
+              <q-item-section>
+                <q-select
+                  outlined
+                  dense
+                  clearable
+                  v-model="tipo_perfil"
+                  :options="options_tipo_perfil"
+                  option-label="name"
+                  option-value="value"
+                  emit-value
+                  stack-label
+                  map-options
+                  label="Tipo de Perfil"
+                  lazy-rules
+                  :rules="[val => (val && val > 0) || 'Campo obligatorio']"
+                />
+              </q-item-section>
+            </q-item>
+            <q-separator spaced inset />
+            <q-item class="text-center">
               <q-item-section class="text-left q-pl-md">
                 ¿Estado Civil? *
                 <q-option-group
@@ -331,6 +369,48 @@ export default {
         {
           name: "PTP",
           value: 3
+        }
+      ],
+      nivel_educacion: null,
+      options_nivel_educacion: [
+        {
+          name: "Secundaria Completa",
+          value: 1
+        },
+        {
+          name: "Secundaria Incompleta",
+          value: 2
+        },
+        {
+          name: "Técnico Completo",
+          value: 3
+        },
+        {
+          name: "Técnico Incompleto",
+          value: 4
+        },
+        {
+          name: "Universitario Completo",
+          value: 5
+        },
+        {
+          name: "Universitario Incompleto",
+          value: 6
+        },
+        {
+          name: "Sin estudios",
+          value: 7
+        }
+      ],
+      tipo_perfil: null,
+      options_tipo_perfil: [
+        {
+          name: "Mototaxista Propietario",
+          value: "PR"
+        },
+        {
+          name: "Mototaxista Palanca",
+          value: "PA"
         }
       ],
       group: null,
