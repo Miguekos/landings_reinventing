@@ -567,7 +567,10 @@ export default {
             co_modveh: this.co_modveh ? this.co_modveh : "",
             ti_vehper: this.ti_vehper ? this.ti_vehper : "",
             ti_combus: this.ti_combus ? this.ti_combus : "",
-            co_estciv: this.estado_civil
+            co_estciv: this.estado_civil,
+            co_nivedu: this.nivel_educacion ? this.nivel_educacion : "",
+            ti_perfil: this.tipo_perfil ? this.tipo_perfil : ""
+            
           };
           console.log(JsonEnviar);
           const respon = await this.$axios.post(
