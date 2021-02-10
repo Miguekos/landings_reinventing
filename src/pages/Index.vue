@@ -216,7 +216,7 @@
                   map-options
                   label="Tipo de Perfil"
                   lazy-rules
-                  :rules="[val => (val && val > 0) || 'Campo obligatorio']"
+                  :rules="[val => (val && val.length > 0) || 'Campo obligatorio']"
                 />
               </q-item-section>
             </q-item>
