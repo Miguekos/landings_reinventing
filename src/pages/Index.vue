@@ -501,6 +501,7 @@ export default {
       apellido_paterno: "",
       apellido_materno: "",
       nombres: "",
+      correo: "",
       numero_documento: "",
       fecha_nacimiento: "",
       celular: "",
