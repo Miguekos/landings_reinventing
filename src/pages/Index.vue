@@ -200,7 +200,7 @@
                   label="Nivel de Educación:"
                   lazy-rules
                   :rules="[
-                    val => (val && val.length > 0) || 'Campo obligatorio'
+                    val => (val && val > 0) || 'Campo obligatorio'
                   ]"
                 />
               </q-item-section>
