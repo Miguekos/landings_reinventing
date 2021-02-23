@@ -243,6 +243,38 @@
               </q-item-section>
             </q-item>
             <q-item class="text-center">
+            <q-item-section>
+            <q-input
+              outlined
+              lazy-rules
+              :rules="[
+              val => (val && val.length === 6) || 'Campo obligatorio'
+              ]"
+              stack-label
+              dense
+              counter
+              maxlength="6"
+              v-model="co_plaveh"
+              ref="co_plaveh"
+              label="Número de placa *"
+            ></q-input>
+            <q-separator spaced inset />
+            <q-item class="text-center">
+              <q-item-section class="text-left q-pl-md">
+                Mi auto usa *
+                <q-option-group
+                  dense
+                  size="xs"
+                  :options="optionsLI"
+                  label="Mi auto usa"
+                  type="radio"
+                  v-model="ti_combus"
+                />
+              </q-item-section>
+            </q-item>
+            </q-item-section>
+          </q-item>
+            <q-item class="text-center">
               <q-item-section avatar>
                 <q-toggle style="align-self: center;" v-model="accept" />
               </q-item-section>
