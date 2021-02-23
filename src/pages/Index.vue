@@ -198,6 +198,7 @@
                 />
                 <!-- <q-select outlined  stack-label dense v-model="model" ref="model" label="¿En qué distrito vives? *"></q-select> -->
               </q-item-section>
+
               <q-item-section>
                 <q-select
                   ref="ciudad"
@@ -220,6 +221,7 @@
                 />
               </q-item-section>
             </q-item>
+
             <q-item class="text-center">
               <q-item-section>
                 <q-select
@@ -242,37 +244,115 @@
                 />
               </q-item-section>
             </q-item>
+
             <q-item class="text-center">
-            <q-item-section>
-            <q-input
-              outlined
-              lazy-rules
-              :rules="[
-              val => (val && val.length === 6) || 'Campo obligatorio'
-              ]"
-              stack-label
-              dense
-              counter
-              maxlength="6"
-              v-model="co_plaveh"
-              ref="co_plaveh"
-              label="Número de placa *"
-            ></q-input>
-            <q-separator spaced inset />
-            <q-item class="text-center">
-              <q-item-section class="text-left q-pl-md">
-                Mi auto usa *
-                <q-option-group
+              <q-item-section>
+                <q-input
+                  outlined
+                  lazy-rules
+                  :rules="[
+                  val => (val && val.length === 6) || 'Campo obligatorio'
+                  ]"
+                  stack-label
                   dense
-                  size="xs"
-                  :options="optionsLI"
-                  label="Mi auto usa"
-                  type="radio"
-                  v-model="ti_combus"
-                />
+                  counter
+                  maxlength="6"
+                  v-model="co_plaveh"
+                  ref="co_plaveh"
+                  label="Número de placa *"
+                ></q-input>
+              
+                <q-separator spaced inset />
+              </q-item-section>
+              <q-item-section>
+                <q-input
+                  outlined
+                  lazy-rules
+                  :rules="[
+                  val => (val && val.length === 4) || 'Campo obligatorio'
+                  ]"
+                  stack-label
+                  dense
+                  counter
+                  maxlength="4"
+                  v-model="nu_anoveh"
+                  ref="nu_anoveh"
+                  label="Año del Vehículo *"
+                ></q-input>
+              
+                <q-separator spaced inset />
               </q-item-section>
             </q-item>
-            </q-item-section>
+
+            <q-item class="text-center">
+              <q-item-section>
+                <q-input
+                  outlined
+                  lazy-rules
+                  :rules="[
+                    val => (val && val.length > 0) || 'Campo obligatorio'
+                  ]"
+                  stack-label
+                  dense
+                  counter
+                  v-model="no_marveh"
+                  ref="no_marveh"
+                  label="Marca *"
+                ></q-input>
+              
+                <q-separator spaced inset />
+              </q-item-section>
+              <q-item-section>
+                <q-input
+                  outlined
+                  lazy-rules
+                  :rules="[
+                    val => (val && val.length > 0) || 'Campo obligatorio'
+                  ]"
+                  stack-label
+                  dense
+                  counter
+                  v-model="no_modveh"
+                  ref="no_modveh"
+                  label="Modelo *"
+                ></q-input>
+              
+                <q-separator spaced inset />
+              </q-item-section>
+            </q-item>
+
+
+            <q-item class="text-center">
+              <q-item-section>
+                <q-item class="text-center">
+                  <q-item-section class="text-left q-pl-md">
+                    Mi auto usa *
+                    <q-option-group
+                      dense
+                      size="xs"
+                      :options="optionsLI"
+                      label="Mi auto usa *"
+                      type="radio"
+                      v-model="ti_combus"
+                    />
+                  </q-item-section>
+                </q-item>
+
+                <q-item class="text-center">
+                  <q-item-section class="text-left q-pl-md">
+                    Quero cambiarlo a *
+                    <q-option-group
+                      dense
+                      size="xs"
+                      :options="optionsLII"
+                      label="Quiero cambiarlo a *"
+                      type="radio"
+                      v-model="ti_combus2"
+                    />
+                  </q-item-section>
+                </q-item>
+              </q-item-section>
+
           </q-item>
             <q-item class="text-center">
               <q-item-section avatar>
@@ -309,6 +389,30 @@ export default {
     return {
       estado_civil : "",
       tipo_documento: null,
+      optionsLI: [
+        {
+          label: "Gasolina",
+          value: 1
+        },
+        {
+          label: "GNV",
+          value: 2
+        },
+        {
+          label: "GLP",
+          value: 3
+        },
+      ],
+      optionsLII: [
+        {
+          label: "GNV",
+          value: 2
+        },
+        {
+          label: "GLP",
+          value: 3
+        },
+      ],
       options_tipo_documento: [
         {
           name: "DNI",
@@ -346,6 +450,9 @@ export default {
       co_modveh: "",
       ti_vehper: "",
       ti_combus: "",
+      ti_combus2: "",
+      no_marveh: "",
+      no_modveh: "",
     };
   },
   computed: {
@@ -386,7 +493,7 @@ export default {
             // ciudad: this.ciudad,
             // brevete: this.brevete,
             // lo que recibe el webservice
-            ti_landin: 2,
+            ti_landin: 4,
             no_apepat: this.apellido_paterno ? this.apellido_paterno : "",
             no_apemat: this.apellido_materno ? this.apellido_materno : "",
             no_nombre: this.nombres ? this.nombres : "",
@@ -403,7 +510,12 @@ export default {
             co_modveh: this.co_modveh ? this.co_modveh : "",
             ti_vehper: this.ti_vehper ? this.ti_vehper : "",
             ti_combus: this.ti_combus ? this.ti_combus : "",
-            co_estciv: this.estado_civil
+            ti_combus2: this.ti_combus2 ? this.ti_combus2 : "",
+            nu_anoveh: this.nu_anoveh ? this.nu_anoveh : "",
+            no_marveh: this.no_marveh ? this.no_marveh : "",
+            no_modveh: this.no_modveh ? this.no_modveh : "",
+            co_estciv: this.estado_civil,
+            
           };
           console.log(JsonEnviar);
           const respon = await this.$axios.post(
