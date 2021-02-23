@@ -493,7 +493,7 @@ export default {
             // ciudad: this.ciudad,
             // brevete: this.brevete,
             // lo que recibe el webservice
-            ti_landin: 4,
+            ti_landin: 5,
             no_apepat: this.apellido_paterno ? this.apellido_paterno : "",
             no_apemat: this.apellido_materno ? this.apellido_materno : "",
             no_nombre: this.nombres ? this.nombres : "",
