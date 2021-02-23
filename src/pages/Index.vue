@@ -4,15 +4,15 @@
       <div class="col-md-3"></div>
       <div class="col-xs-12 col-md-6">
         <div class="text-center">
-          <q-img src="logo_moto_lineal.png"></q-img>
+          <q-img src="logo4.jpeg"></q-img>
         </div>
         <q-list>
           <q-form @submit="onSubmit">
             <q-item class="text-justify">
               <q-item-section>
-                <div class="text-h5">¡Tu nueva moto te espera!</div>
+                <div class="text-h5">¡Financia tu convesión!</div>
                 <br>
-                Deja de alquilar y ten tu moto lineal 🏍  🛵 😎
+                Ahorra mas!!!
                 Registra tus datos de contacto aquí para que nuestros asesores puedan pre evaluarte
                 Pre evaluación 100% digital 👩🏽‍💻
                 <br>
@@ -84,20 +84,7 @@
                   lazy-rules
                   :rules="[val => (val && val > 0) || 'Campo obligatorio']"
                 />
-                <!-- <q-input
-                  outlined
-                  lazy-rules
-                  :rules="[
-                    val => (val && val.length === 8) || 'Campo obligatorio'
-                  ]"
-                  stack-label
-                  dense
-                  counter
-                  maxlength="8"
-                  v-model="numero_documento"
-                  ref="tipo_documento"
-                  label="Número de DNI *"
-                ></q-input> -->
+                
               </q-item-section>
               <q-item-section>
                 <q-input
@@ -168,24 +155,6 @@
                 ></q-input>
               </q-item-section>
             </q-item>
-            <q-separator spaced inset />
-            <q-item class="text-center">
-              <q-item-section class="text-left q-pl-md">
-                ¿Estado Civil? *
-                <q-option-group
-                  dense
-                  size="xs"
-                  :options="optionsC"
-                  label="Notifications"
-                  type="radio"
-                  v-model="estado_civil"
-                  lazy-rules
-                  :rules="[
-                    val => (val && val.length > 0) || 'Campo obligatorio'
-                  ]"
-                />
-              </q-item-section>
-            </q-item>
             <!-- <q-separator spaced inset /> -->
             <!-- <q-item class="text-center">
               <q-item-section class="text-left q-pl-md">
@@ -204,20 +173,6 @@
                 />
               </q-item-section>
             </q-item> -->
-            <q-separator spaced inset />
-            <q-item class="text-center">
-              <q-item-section class="text-left q-pl-md">
-                ¿Qué tipo de brevete para moto tienes? *
-                <q-option-group
-                  dense
-                  size="xs"
-                  :options="optionsR"
-                  label="Notifications"
-                  type="radio"
-                  v-model="brevete"
-                />
-              </q-item-section>
-            </q-item>
             <q-separator spaced inset />
 
             <q-item class="text-center">
@@ -337,53 +292,6 @@ export default {
         }
       ],
       group: null,
-      optionsC: [
-        { label: "Soltero", value: "S" },
-        { label: "Casado", value: "C", color: "green" },
-        {
-          label: "Viudo",
-          value: "V",
-          color: "red"
-        },
-        {
-          label: "Divorciado",
-          value: "D",
-          color: "orange"
-        },
-        {
-          label: "Conviviente",
-          value: "O",
-          color: "teal"
-        }
-      ],
-      optionsE: [
-        { label: "Menos de 1 año", value: "1" },
-        { label: "1 año", value: "2", color: "green" },
-        {
-          label: "Más de 1 año",
-          value: "3",
-          color: "red"
-        },
-        {
-          label: "No tengo experiencia",
-          value: "4",
-          color: "orange"
-        }
-      ],
-      optionsR: [
-        { label: "B2C", value: "9" },
-        { label: "Otro", value: "10", color: "green" },
-        {
-          label: "Brevete venezolano",
-          value: "12",
-          color: "red"
-        },
-        {
-          label: "No tengo Brevete",
-          value: "11",
-          color: "orange"
-        }
-      ],
       loadboton: false,
       accept: false,
       submitResult: [],
