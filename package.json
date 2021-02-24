@@ -1,8 +1,8 @@
 {
-  "name": "moto_lineal",
+  "name": "conversiones",
   "version": "0.0.1",
   "description": "A Quasar Framework app",
-  "productName": "Moto Lineal",
+  "productName": "Conversiones",
   "author": "Miguel Rodriguez <miguekos1233@gmail.com>",
   "private": true,
   "scripts": {
