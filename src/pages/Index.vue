@@ -390,42 +390,18 @@ export default {
       estado_civil : "",
       tipo_documento: null,
       optionsLI: [
-        {
-          label: "Gasolina",
-          value: 1
-        },
-        {
-          label: "GNV",
-          value: 2
-        },
-        {
-          label: "GLP",
-          value: 3
-        },
+        {label: "Gasolina", value: 1}, 
+        {label: "GNV", value: 2}, 
+        {label: "GLP", value: 3},
       ],
-      optionsLII: [
-        {
-          label: "GNV",
-          value: 2
-        },
-        {
-          label: "GLP",
-          value: 3
-        },
+      optionsLII: 
+        [{label: "GNV", value: 2}, 
+        {label: "GLP", value: 3},
       ],
       options_tipo_documento: [
-        {
-          name: "DNI",
-          value: 1
-        },
-        {
-          name: "C.E",
-          value: 2
-        },
-        {
-          name: "PTP",
-          value: 3
-        }
+        {name: "DNI",value: 1},
+        {name: "C.E",value: 2},
+        {name: "PTP",value: 3}
       ],
       group: null,
       loadboton: false,
@@ -453,6 +429,8 @@ export default {
       ti_combus2: "",
       no_marveh: "",
       no_modveh: "",
+      co_nivedu: "",
+      ti_perfil: "",
     };
   },
   computed: {
@@ -493,30 +471,33 @@ export default {
             // ciudad: this.ciudad,
             // brevete: this.brevete,
             // lo que recibe el webservice
-            ti_landin: 5,
-            no_apepat: this.apellido_paterno ? this.apellido_paterno : "",
-            no_apemat: this.apellido_materno ? this.apellido_materno : "",
-            no_nombre: this.nombres ? this.nombres : "",
-            co_docide: this.numero_documento ? this.numero_documento : "",
-            ti_docide: this.tipo_documento ? this.tipo_documento : "",
-            ti_nacion: "",
-            fe_nacimi: this.fecha_nacimiento,
-            no_correo: "",
-            nu_telefo: this.celular ? this.celular : "",
-            va_experi: this.experiencia ? this.experiencia : "",
-            ti_liccon: this.brevete ? this.brevete : "",
-            co_ubigeo: this.distrito ? this.distrito : "",
-            co_plaveh: this.co_plaveh ? this.co_plaveh : "",
-            co_modveh: this.co_modveh ? this.co_modveh : "",
-            ti_vehper: this.ti_vehper ? this.ti_vehper : "",
-            ti_combus: this.ti_combus ? this.ti_combus : "",
-            ti_combus2: this.ti_combus2 ? this.ti_combus2 : "",
-            nu_anoveh: this.nu_anoveh ? this.nu_anoveh : "",
-            no_marveh: this.no_marveh ? this.no_marveh : "",
-            no_modveh: this.no_modveh ? this.no_modveh : "",
-            co_estciv: this.estado_civil,
+            ti_landin: 5, // ${ti_landin},
+            no_apepat: this.apellido_paterno ? this.apellido_paterno : "", // '${no_apepat}',
+            no_apemat: this.apellido_materno ? this.apellido_materno : "", // '${no_apemat}',
+            no_nombre: this.nombres ? this.nombres : "", // '${no_nombre}', 
+            co_docide: this.numero_documento ? this.numero_documento : "", // '${co_docide}',
+            ti_docide: this.tipo_documento ? this.tipo_documento : "", // ${ti_docide},
+            ti_nacion: "", // '${ti_nacion}',
+            fe_nacimi: this.fecha_nacimiento, // '${fe_nacimi}',
+            co_estciv: this.estado_civil, // '${co_estciv}',
+            no_correo: "", // '${no_correo}',
+            nu_telefo: this.celular ? this.celular : "", // '${nu_telefo}',
+            va_experi: this.experiencia ? this.experiencia : "", // ${va_experi},
+            ti_liccon: this.brevete ? this.brevete : "", // ${ti_liccon},
+            co_ubigeo: this.distrito ? this.distrito : "", // ${co_ubigeo},
+            co_plaveh: this.co_plaveh ? this.co_plaveh : "", // '${co_plaveh}',
+            co_modveh: this.co_modveh ? this.co_modveh : "", // ${co_modveh},
+            ti_vehper: this.ti_vehper ? this.ti_vehper : "", // '${ti_vehper}',
+            ti_combus: this.ti_combus ? this.ti_combus : "", // ${ti_combus},
+            co_nivedu: this.co_nivedu ? this.co_nivedu : "", // ${co_nivedu},
+            ti_perfil: this.ti_perfil ? this.ti_perfil : "", // ${ti_perfil},
+            ti_combus2: this.ti_combus2 ? this.ti_combus2 : "", // ${ti_combus2},
+            nu_anoveh: this.nu_anoveh ? this.nu_anoveh : "", // ${nu_anoveh},
+            no_marveh: this.no_marveh ? this.no_marveh : "", // '${no_marveh}',
+            no_modveh: this.no_modveh ? this.no_modveh : "", // '${no_modveh}'
             
           };
+
           console.log(JsonEnviar);
           const respon = await this.$axios.post(
             `https://api.reinventing.com.pe/v2.0/comerc/insert_landin`,
