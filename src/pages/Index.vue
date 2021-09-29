@@ -223,8 +223,7 @@
             <q-separator spaced inset />
             <q-item class="text-center">
               <q-item-section class="text-left q-pl-md">
-                Tipo de licencia de conducir *
-                <div>No se acepta brevete A1</div>
+                Tipo de licencia de conducir (Solo se acepta brevete peruano)
                 <q-option-group
                   dense
                   size="xs"
@@ -340,6 +339,10 @@ export default {
       ti_nacion: "",
       tipo_documento: null,
       optionsLI: [
+         {
+          label: "A1",
+          value: 1
+        },
         {
           label: "A2",
           value: 2
