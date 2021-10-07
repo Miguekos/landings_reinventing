@@ -4,20 +4,23 @@
       <div class="col-md-3"></div>
       <div class="col-xs-12 col-md-6">
         <div class="text-center">
-          <q-img src="logo4.jpeg"></q-img>
+          <q-img src="logo5.jpg"></q-img>
         </div>
         <q-list>
           <q-form @submit="onSubmit">
             <q-item class="text-justify">
               <q-item-section>
-                <div class="text-h5">¡Financia tu convesión!</div>
+                <div class="text-h5">Financia tu conversión a GNV</div>
                 <br>
-                Ahorra mas!!!
-                Registra tus datos de contacto aquí para que nuestros asesores puedan pre evaluarte
-                Pre evaluación 100% digital 👩🏽‍💻
+                Inicial e interés cero, hasta 36 cuotas para pagar.  ✅3 años de garantía ✅3 mantenimientos gratis ✅ pre inspección 
+                vehicular gratuita. Más fácil, imposible 😎
+                Deja de preocuparte por la subida de la gasolina y GLP y ahorra con GNV 🚗💰
                 <br>
                 <br>
-                ✅  Si tienes alguna duda, escríbenos por inbox en nuestra página en Facebook. Encuéntranos como REINVENTING.
+                Regístrate aquí y nuestros asesores se pondrán en contacto contigo ⬇️
+                <br>
+                <br>
+                ➡️ WhatsApp: http://bit.ly/3a2vTCf  📲 Llámanos al 972930896 / 981084877 / 915373311 ☎️ Oficina central: (01) 303 7033
               </q-item-section>
             </q-item>
             <q-item class="text-center">
