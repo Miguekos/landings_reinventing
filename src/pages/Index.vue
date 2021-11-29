@@ -20,7 +20,7 @@
                 Regístrate aquí y nuestros asesores se pondrán en contacto contigo ⬇️
                 <br>
                 <br>
-                ➡️ WhatsApp: http://bit.ly/3a2vTCf  📲 Llámanos al 972930896 / 981084877 / 915373311 ☎️ Oficina central: (01) 303 7033
+                📲 Llámanos al 972930896 / 981084877 / 915373311 ☎️ Oficina central: (01) 303 7033
               </q-item-section>
             </q-item>
             <q-item class="text-center">
@@ -343,7 +343,7 @@
 
                 <q-item class="text-center">
                   <q-item-section class="text-left q-pl-md">
-                    Quero cambiarlo a *
+                    Quiero cambiarlo a *
                     <q-option-group
                       dense
                       size="xs"
